@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Manager</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+    </style>
+    <body ng-app="tapp" >
+       <div style="margin: 0 auto; width: 225px;">
+         <p>Frontend is under construction: Only REST APIs available now which are listed below</p> 
+       </div> 
+       <div  ng-controller="tapp-controller">
+        <div ng-repeat="api in apiList">
+            <p><h3>{{api.op}}</h5></p>
+            <ul>
+                <li><span>HTTP method :</span>{{api.mtd}}</li>   
+                <li><span>URL :</span>{{api.url}}</li>
+                <li ng-if="api.body"><span>Body :</span>{{api.body}}</li>
+                <span ng-if="api.desc" >{{api.desc}}</span>
+            </ul>
+        </div>
+       </div>      
+    </body>
+</html>
